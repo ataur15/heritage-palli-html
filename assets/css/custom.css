@@ -37,6 +37,10 @@ p {
   margin: 0;
 }
 
+.header-topbar {
+  width: 100%;
+}
+
 .header-top {
   background: #171717;
   padding: 10px 15px 10px 0;
@@ -75,7 +79,6 @@ span.top-nav-icon {
 }
 
 .top-nav ul li a span {
-  margin: 0 2px 0 0;
   padding: 0 8px;
   border-right: 1px solid #ddd;
   line-height: 12px;
@@ -128,15 +131,18 @@ i.uil.uil-shopping-cart {
   font-size: 22px;
 }
 
-.mainbar {
-  display: flex;
+.left-sidebar {
+  width: 15%;
+  height: 100vh;
+  padding: 10px 10px;
+  position: fixed;
+  z-index: 99;
+  background: #171717;
 }
 
-.left-sidebar {
-  background: #171717;
-  width: 200px;
-  padding: 10px 15px;
-  height: 100vh;
+.main-right-sidebar {
+  width: 85%;
+  float: right;
 }
 
 .logo-bar {
@@ -149,18 +155,6 @@ i.uil.uil-shopping-cart {
   display: block;
 }
 
-.main-right-sidebar {
-  flex-grow: 1;
-}
-
-.banner {
-  width: 100%;
-  height: 100vh;
-}
-
-.banner img {
-  width: 100%;
-}
 
 /* left accordion menu */
 .accordion {
@@ -189,10 +183,9 @@ i.uil.uil-shopping-cart {
   position: absolute;
   height: 14px;
   width: 14px;
-  right: 2px;
+  right: 8px;
   top: 14px;
 }
-
 
 .accordion .a-container .a-btn span:after {
   content: '';
@@ -284,11 +277,86 @@ i.uil.uil-shopping-cart {
   padding-bottom: 0;
 }
 
+.slider {
+  width: 100%;
+}
 
+.slider img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
+.banner-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
+.banner-area img {
+  width: 100%;
+  height: 100%;
+}
 
+.image-hover {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\' filterRes=\'800\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  /* Firefox 10+ */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+ & Safari 6+ */
+  -webkit-backface-visibility: hidden;
+  /* Fix for transition flickering */
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
+.image-hover:hover {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\' filterRes=\'800\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(0%);
+}
+
+.banner-area .banner-bar {
+  position: relative;
+  height: 100%;
+}
+
+.banner-area .banner-bar:hover .tooltip {
+  display: block;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background: #00000059;
+  padding: 20px 0px 15px;
+  width: 100%;
+  color: #fff;
+}
+
+.tooltip a {
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.tooltip p {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.tooltip a:hover {
+  color: #d99316;
+}
 
 
 
@@ -299,9 +367,19 @@ i.uil.uil-shopping-cart {
 
 /* Small devices (Phones) */
 @media only screen and (max-width:767px) {
+  .header-topbar {
+    position: unset;
+    width: 100%;
+  }
+
   .header-top {
     display: block;
     padding-top: 0;
+  }
+
+  .main-right-sidebar {
+    width: 100%;
+    float: none;
   }
 
   .search {
@@ -327,6 +405,10 @@ i.uil.uil-shopping-cart {
   .left-sidebar {
     display: none;
   }
+
+  .banner-area {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -336,16 +418,16 @@ i.uil.uil-shopping-cart {
   }
 
   .left-sidebar {
-    width: 380px;
+    width: 20%;
+  }
+
+  .main-right-sidebar {
+    width: 80%;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media only screen and (min-width: 992px) and (max-width:1100px) {
-  .left-sidebar {
-    width: 340px;
-  }
-}
+@media only screen and (min-width: 992px) and (max-width:1100px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
