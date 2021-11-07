@@ -75,7 +75,7 @@ span.top-nav-icon {
 }
 
 .top-nav ul li a:hover {
-  color: #d99316;
+  color: #f9a40c;
 }
 
 .top-nav ul li a span {
@@ -120,7 +120,7 @@ span.search-icon {
 }
 
 .shopping-cart a:hover {
-  color: #d99316;
+  color: #f9a40c;
 }
 
 span.cart-icon {
@@ -259,7 +259,7 @@ i.uil.uil-shopping-cart {
 
 .menubar nav ul li:hover>a {
   text-decoration: none;
-  color: #d99316;
+  color: #f9a40c;
 }
 
 
@@ -285,14 +285,14 @@ i.uil.uil-shopping-cart {
   display: block;
 }
 
+.banner-main img {
+  width: 100%;
+  display: block;
+}
+
 .banner-area {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
-
-.banner-area img {
-  width: 100%;
-  display: block;
 }
 
 .image-hover {
@@ -316,17 +316,17 @@ i.uil.uil-shopping-cart {
   -webkit-filter: grayscale(0%);
 }
 
-.banner-area .banner-bar {
+.banner-bar {
   position: relative;
   height: 100%;
 }
 
-.banner-area .banner-bar:hover .tooltip {
+/* .banner-bar:hover .tooltip {
   display: block;
-}
+} */
 
 .tooltip {
-  display: none;
+  display: block;
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -353,11 +353,8 @@ i.uil.uil-shopping-cart {
 }
 
 .tooltip a:hover {
-  color: #d99316;
+  color: #f9a40c;
 }
-
-
-
 
 
 
